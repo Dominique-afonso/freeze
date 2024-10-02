@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Gestão de Candidatos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #161C30;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 90%;
+            margin: 20px auto;
+            max-width: 1200px;
+        }
+        h1, h2, h3 {
+            text-align: center;
+        }
+        h1 {
+            font-size: 2rem;
+        }
+        .form-container {
+            display: none;
+        }
+        form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        label, input, select {
+            font-size: 16px;
+            padding: 10px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 12px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .show-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .show-link a {
+            font-size: 18px;
+            color: #4CAF50;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        .contacts {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 16px;
+        }
+
+        /* Estilo das imagens com texto */
+        .image-container {
+            margin-top: 20px;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .image-wrapper {
+            position: relative;
+            width: 100%;
+            height: 250px;
+            margin-bottom: 20px;
+        }
+
+        .image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: relative;
+            transition: transform 0.5s ease;
+        }
+
+        .image-wrapper img:hover {
+            transform: scale(1.05); /* Efeito de zoom */
+        }
+
+        .image-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 1.5rem;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+        }
+
+        /* Ocultar as imagens */
+        .image-container.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            form {
+                grid-template-columns: 1fr; /* One column layout on smaller screens */
+            }
+            button {
+                font-size: 14px;
+            }
+
+            .image-wrapper {
+                height: auto;
+            }
+
+            .image-wrapper img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+            label, input, select {
+                font-size: 14px;
+            }
+            button {
+                padding: 10px;
+                font-size: 14px;
+            }
+            th, td {
+                font-size: 12px;
+            }
+
+            .image-wrapper {
+                height: auto;
+            }
+
+            .image-wrapper img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Pro Events Concurso Bíblico Candidatura</h1>
+        <h2>Deposite os 1000Kz de Inscrição Iban:A006.0005.0000.0321.6828.10115 (Josué Miguel Pedro Doviana)</h2>
+        <h3>E envie o Comprovativo e código de Candidatura neste terminal: 958322716</h3>
+
+
+        <p> Muitos adolescentes tem passado o seu maior tempo nas coisas futís, sem ter um tempo para o estudo biblico,
+            poucos sabem manusear a propria biblia, poucos sabem sobre a sua composição, das histórias narradas nela,
+            das profecias e promessas dadas a nós, e sobre o evangelho de cristo. Por essa razão, trouxemos um incentivo,
+            onde jovens farão pesquisas ou estudo Biblico durante um prazo a fim de participar num desafio.</p>
+
+        <p>Criterios da inscrição:
+            1.-Quem pode participar?-->
+              Qualquer Jovem de 14 anos a 30 anos,
+            2.-Os documentos necessários?-->
+              Copia de Bi ou cedula ou cartão escolar ou carta de membro da igreja,1-foto passe,Mica (Presencial),
+            3.-Deve se pagar uma taxa?-->
+              Sim, de (1000)kz
+        </p>
+            <p>
+            Att:As inscrições Presenciais estão a ser feita na Igreja M.E.R(Centro Mes Betesda) localizada no Cazenga/Mabor/Rua da casa Matshuda,
+            deve ser cristão e se possivel ser acompanhado por um mentor seu!!
+        </p>
+        <h2>Critérios de avaliação (os Desafios)</h2>
+        <!-- Container de Imagens com Texto -->
+        <div class="image-container" id="imageContainer">
+            <div class="image-wrapper">
+                <img src="abc 1.jpg" alt="Imagem 1">
+                <div class="image-text">1.	Manuseio da Biblia:
+O Jovem deve ser rápido em achar os textos biblicos propostos em pouco intervalo de tempo.
+                    Saber como escrever um texto biblico e interpretar as abreviações dos textos. Ex: Mt 6:5-8,14; Jd 9.
+</div>
+            </div>
+            <div class="image-wrapper">
+                <img src="abc 2.jpg" alt="Imagem 2">
+                <div class="image-text">2.	História Biblica:
+O Jovem deve saber a maioria das histórias biblicas (as historias capitais), como: do Moisés, Abraão, José,josué,Davi,Salomão, Jesus, etc.
+</div>
+            </div>
+            <div class="image-wrapper">
+                <img src="abc 1.jpg" alt="Imagem 3">
+                <div class="image-text">3.	Memorização Biblica:
+O Jovem deve ter varios textos (textos capitais) na mente, dando referencia biblica e citar o que está escrito. Ex: Jo 3.16 -“Porque Deus amou tanto o mundo e deu o seu unico filho para que todos que creêm nele não pereçam mas, tenha a vida eterna”
+</div>
+            </div>
+            <div class="image-wrapper">
+                <img src="abc 4.jpg" alt="Imagem 4">
+                <div class="image-text">4 .Conhecimento Geral:
+                Ter fundamentos ou definições sobre alguns temas, por ex:
+                Saber definir Oração, a Fé, a Salvação, O baptismo, Os Anjos, etc</div>
+            </div>
+            <div class="image-wrapper">
+                <img src="abc 1.jpg" alt="Imagem 4">
+                <div class="image-text">5 .Interpretação:
+                Ter habilidade de ler e fazer um estudo sobre o texto em causa
+                e Ser capaz de reter uma lição e aplicando-a no nosso cotidiano.
+                </div>
+            </div>
+        </div>
+        <div class="show-link">
+            <a id="toggleLink" onclick="toggleFormulario()">Candidatar-se</a>
+        </div>
+
+        <div class="form-container" id="formContainer">
+            <form id="candidateForm">
+                <label for="nome">Nome Completo:</label>
+                <input type="text" id="nome" name="nome" required>
+
+                <label for="bairro">Bairro:</label>
+                <input type="text" id="bairro" name="bairro" required>
+
+                <label for="contato">Contato:</label>
+                <input type="text" id="contato" name="contato" required>
+
+                <label for="habilitacao">Habilitação Literária:</label>
+                <select id="habilitacao" name="habilitacao" required>
+                    <option value="">Selecione</option>
+                    <option value="7 Classe">7 Classe</option>
+                    <option value="8 Classe">8 Classe</option>
+                    <option value="9 Classe">9 Classe</option>
+                    <option value="10 Classe">10 Classe</option>
+                    <option value="11 Classe">11 Classe</option>
+                    <option value="12 Classe">12 Classe</option>
+                    <option value="13 Classe">13 Classe</option>
+                    <option value="Ensino Superior">Ensino Superior</option>
+                </select>
+
+                <label for="genero">Gênero:</label>
+                <select id="genero" name="genero" required>
+                    <option value="">Selecione</option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Feminino">Feminino</option>
+                </select>
+
+                <label for="municipio">Municipio:</label>
+                <input type="text" id="municipio" name="municipio" required>
+
+                <label for="idade">Idade:</label>
+                <input type="number" id="idade" name="idade" required>
+
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email" required>
+
+                <label for="igreja">Igreja:</label>
+                <input type="text" id="igreja" name="igreja" required>
+
+                <label for="pastor">Nome Pastor:</label>
+                <input type="text" id="pastor" name="pastor" required>
+
+                <button type="button" onclick="submitForm()">Confirmar a Candidatura</button>
+            </form>
+
+            <div class="contacts">
+                <p>Contatos: 924516785, 946838285, 958322716</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleFormulario() {
+            const formContainer = document.getElementById('formContainer');
+            const toggleLink = document.getElementById('toggleLink');
+            const imageContainer = document.getElementById('imageContainer');
+
+            if (formContainer.style.display === 'block') {
+                formContainer.style.display = 'none';
+                toggleLink.innerText = 'Candidatar-se';
+                imageContainer.classList.remove('hidden');
+
+            } else {
+                formContainer.style.display = 'block';
+                toggleLink.innerText = 'Recolher';
+                imageContainer.classList.add('hidden');
+            }
+        }
+
+        function submitForm() {
+            const formData = {
+                nome: document.getElementById('nome').value,
+                bairro: document.getElementById('bairro').value,
+                contato: document.getElementById('contato').value,
+                habilitacao: document.getElementById('habilitacao').value,
+                genero: document.getElementById('genero').value,
+                municipio: document.getElementById('municipio').value,
+                idade: document.getElementById('idade').value,
+                email: document.getElementById('email').value,
+                igreja: document.getElementById('igreja').value,
+                pastor: document.getElementById('pastor').value,
+            };
+
+            // Verifica se algum campo está vazio
+            for (const key in formData) {
+                if (formData[key] === "") {
+                    alert("Por favor, preencha todos os campos.");
+                    return;
+                }
+            }
+
+            // Armazenar os dados no localStorage
+            localStorage.setItem('formData', JSON.stringify(formData));
+
+            // Redirecionar para a página de confirmação
+            window.location.href = 'confirmation.html';
+        }
+    </script>
+</body>
+</html>
